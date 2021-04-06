@@ -10,7 +10,6 @@ class Customer : public Clothing{
     long phoneno;
 
     public:
-        //clothing class add display functn
         void filter(); //search the products by price range and display in sorted form
         void search(int ID);
         void buy(int ID);

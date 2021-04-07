@@ -1,5 +1,8 @@
+#ifndef CLOTHING_H
+#define CLOTHING_H
 #include<iostream>
 #include<string>
+using namespace std;
 class Clothing {
 	public:
 	 int ID;
@@ -10,3 +13,4 @@ class Clothing {
 	 void display();
 };
 // This is Clothing class declaration.
+#endif

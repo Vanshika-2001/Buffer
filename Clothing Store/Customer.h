@@ -2,7 +2,10 @@
 #define CUSTOMER_H
 #include "Clothing.h"
 #include<iostream>
+#include<string>
+
 using namespace std;
+
 class Customer : public Clothing{
     string address;
     string CustName;

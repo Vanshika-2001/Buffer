@@ -1,3 +1,5 @@
+#ifndef SELLER_H
+#define SELLER_H
 #include "Clothing.h"
 #include<iostream>
 class Seller: public Clothing 
@@ -9,3 +11,4 @@ class Seller: public Clothing
      
 };
 // This class includes the declarations of the functions for seller class .
+#endif

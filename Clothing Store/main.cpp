@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+#include "linkedList.h"
 //#include "Clothing.h"
 //#include "seller.h"
 using namespace std;
 int main(){
+	LinkedList* list = new LinkedList();
     int ch;     //choice
     char ans;   //yes or no for continuing in the do while loop
     cout<<"Welcome to Clothing Store"<<endl;
@@ -63,7 +65,8 @@ int main(){
                     {
                         case 1:
                         //add function call
-                        break;
+							list->add(10,"sfcs","sadas","asdfa",1000);
+						break;
                         case 2:
                         //delete function call
                         break;
@@ -72,7 +75,8 @@ int main(){
                         break;
                         case 4:
                         //display function call
-                        break;
+							list->display();
+						break;
                         default:cout<<"Invalid Entry"<<endl<<"Enter number from the given menu"<<endl;
                     }   //switch ends
 

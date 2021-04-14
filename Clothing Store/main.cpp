@@ -6,6 +6,11 @@
 using namespace std;
 int main(){
 	LinkedList* list = new LinkedList();
+	list->add(1,"Grey printed round neck t-shirt","Western wear","Levi's",800);
+	list->add(2,"Bandhani printed kurta","Ethnic wear","Biba",1200);
+	list->add(3,"Sneakers","Footwear","Roadster",1300);
+	list->add(4,"Captain America t-shirt","Kidswear","Pantaloons",700);
+	list->add(5,"Slimfit jeans","Menswear","H&M",1500);
     int ch;     //choice
     char ans;   //yes or no for continuing in the do while loop
     cout<<"Welcome to Clothing Store"<<endl;
@@ -65,10 +70,25 @@ int main(){
                     {
                         case 1:
                         //add function call
-							list->add(10,"sfcs","sadas","asdfa",1000);
+						{   
+						    int ID,price;
+							string name,type,brand;
+							cout<<"Enter the product ID:"<<endl;
+							cin>>ID;
+							cout<<"Enter the product name:"<<endl;
+							cin>>name;
+							cout<<"Enter the product type:"<<endl;
+							cin>>type;
+							cout<<"Enter the product brand:"<<endl;
+							cin>>brand;
+							cout<<"Enter the price of product:"<<endl;
+							cin>>price;
+							list->add(ID,name,type,brand,price,1);
+						}
 						break;
                         case 2:
                         //delete function call
+						    list->del();
                         break;
                         case 3:
                         //edit function call

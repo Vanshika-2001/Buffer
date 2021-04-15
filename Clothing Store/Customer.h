@@ -5,17 +5,24 @@
 #include<string>
 
 using namespace std;
-
-class Customer : public Clothing{
-    string address;
+class CustNode{
+	public:
+	 string address;
     string CustName;
     int CustId;
     long phoneno;
-
-    public:
-        void filter(); //search the products by price range and display in sorted form
-        void search(int ID);
-        void buy(int ID);
-        void profile();
+	
+	Node *link;
+}
+class  CustLinkedList{
+	private:
+		CustNode *head;
+		CustNode *temp;
+	public:
+		CustLinkedList(){
+			head = NULL;
+			temp = head;
+		}
+		void display_profile();
 };
 #endif

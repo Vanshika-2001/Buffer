@@ -25,19 +25,19 @@ class  LinkedList{
 			head = NULL;
 			temp = head;
 		}
-		
+
 	//Seller functions
 	void add(int ID, string name, string type, string brand, int price);
 	void add(int ID, string name, string type, string brand, int price,int mode);
 	void edit();
 	void del();
-	
+
 	void display();
-	
+
 	//Customer Functions
 	 void filter(); 	//search the products by price range and display in sorted form
-     void search(int ID);
-     void buy(int ID);
+     void search();
+     void buy();
 };
 
 #endif

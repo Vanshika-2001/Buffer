@@ -1,5 +1,5 @@
-#ifndef CUSTOMER_H
-#define CUSTOMER_H
+#ifndef PROFILE_H
+#define PROFILE_H
 #include "Clothing.h"
 #include<iostream>
 #include<string>
@@ -11,7 +11,7 @@ class CustNode{
     string CustName;
     int CustId;
     long phoneno;
-	
+
 	Node *link;
 };
 class  CustLinkedList{
@@ -23,6 +23,7 @@ class  CustLinkedList{
 			head = NULL;
 			temp = head;
 		}
+		void addCust();//function to add details of predefined customers' profile
 		void display_profile();
 };
 #endif

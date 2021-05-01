@@ -1,5 +1,5 @@
-#ifndef CUSTOMER_H
-#define CUSTOMER_H
+#ifndef PROFILE_H
+#define PROFILE_H
 #include "Clothing.h"
 #include<iostream>
 #include<string>

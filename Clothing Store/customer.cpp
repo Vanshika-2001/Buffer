@@ -4,8 +4,31 @@
 #include <algorithm>
 #include "Clothing.h"
 
-using namespace std;
 
+using namespace std;
+void LinkedList :: filter(){
+    LinkedList *Filter = new LinkedList;
+
+    int choice;
+    cout<<"Select a price ranges from the options given below"<<endl;
+    cout<<"1.Rs.500 to Rs.1000"<<endl<<"2.Rs.1000 to Rs.1500"<<endl<<"3.Rs.1500 to Rs.2000"<<endl;
+    cin>>choice;
+
+    switch(choice){
+        case 1:
+        {
+            while(temp!=NULL){
+                if((temp->price>=500)&&(temp->price<=1000)){
+                    Filter->add(temp->ID,temp->name,temp->type,temp->brand,temp->price);
+                    
+                }
+            }
+        }
+
+    }
+
+    
+}
 void LinkedList :: search(){
   string Input, brand2, name2, type2;
   cout<< "Search for something"<<endl;

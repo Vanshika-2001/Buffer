@@ -7,20 +7,27 @@
 
 using namespace std;
 
-void LinkedList :: sort(int lower, int upper){
-    LinkedList *Filter = new LinkedList();
-    Node *FilterH = head;
-    Node *current = NULL;
-    Node *newnode = NULL;
-    temp = head;
-    while(temp != NULL ){
-        if( (temp -> price >= lower) && (temp -> price <= upper)){
+void LinkedList :: sort(int lower, int upper)
+{
+    LinkedList *Filter = new LinkedList();//creates new object of linked list class for sorted list
+	Node *FilterH = NULL; //head to the new LL
+	Node *current = NULL;// current pointer for neew LL
+    Node *newnode = NULL;// pointer to store address of newly created node
+    temp = head;// pointers of original linkedlist
+	//while block iterates through original linked list
+	 while(temp != NULL )
+	{
+		// if block checks if node is in given price range
+        if( (temp -> price >= lower) && (temp -> price <= upper))
+		{
+			// creation of new node and copying the data from node in original linked list
             newnode = new Node();
             newnode->ID = temp -> ID;
 	        newnode->name = temp ->name;
 	        newnode->type = temp->type;
 	        newnode->brand = temp ->brand;
 	        newnode->price = temp ->price;
+			// Conditions to insert the new node in appropriate position
             if (FilterH == NULL || (FilterH)->price >= newnode->price)
             {
                 newnode->next = FilterH;
@@ -37,12 +44,19 @@ void LinkedList :: sort(int lower, int upper){
                 }
                 newnode->next = current->next;
                 current->next = newnode;
+				
             }
 
             }
         temp = temp -> next; 
     }
-    Filter -> display();
+	//Assigning the head of  our new linked list to the head in the new linked lists object
+	Filter->head=FilterH;
+	/*if(FilterH==NULL)
+	{
+		cout<<"Products not available in the given price range"<<endl;
+	}*/
+    Filter -> display(); //calling display function to display items in given range
     
     
 }
@@ -53,16 +67,17 @@ void LinkedList :: filter(){
     cout<<"1.Rs.500 to Rs.1000"<<endl<<"2.Rs.1000 to Rs.1500"<<endl<<"3.Rs.1500 to Rs.2000"<<endl;
     cin>>choice;
 
-    switch(choice){
-        case 1:
-        {
-           
-                    
-                }
-            }
-        }
-
-    }
+    switch(choice)
+	{
+        case 1:sort(500,1000);
+		break;
+		case 2:sort(1001,1500);
+		break;
+		case 3:sort(1501,2000);
+		break;
+		default: cout<<"Invalid entry"<<endl;
+        
+      }
 
     
 }

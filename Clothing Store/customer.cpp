@@ -6,9 +6,48 @@
 
 
 using namespace std;
-void LinkedList :: filter(){
-    LinkedList *Filter = new LinkedList;
 
+void LinkedList :: sort(int lower, int upper){
+    LinkedList *Filter = new LinkedList();
+    Node *FilterH = head;
+    Node *current = NULL;
+    Node *newnode = NULL;
+    temp = head;
+    while(temp != NULL ){
+        if( (temp -> price >= lower) && (temp -> price <= upper)){
+            newnode = new Node();
+            newnode->ID = temp -> ID;
+	        newnode->name = temp ->name;
+	        newnode->type = temp->type;
+	        newnode->brand = temp ->brand;
+	        newnode->price = temp ->price;
+            if (FilterH == NULL || (FilterH)->price >= newnode->price)
+            {
+                newnode->next = FilterH;
+                FilterH = newnode;
+            }
+            else
+            {
+                /* Locate the node before the point of insertion */
+                current = FilterH;
+                while (current->next!=NULL &&
+                    current->next->price < newnode->price)
+                {
+                    current = current->next;
+                }
+                newnode->next = current->next;
+                current->next = newnode;
+            }
+
+            }
+        temp = temp -> next; 
+    }
+    Filter -> display();
+    
+    
+}
+void LinkedList :: filter(){
+    
     int choice;
     cout<<"Select a price ranges from the options given below"<<endl;
     cout<<"1.Rs.500 to Rs.1000"<<endl<<"2.Rs.1000 to Rs.1500"<<endl<<"3.Rs.1500 to Rs.2000"<<endl;
@@ -17,9 +56,7 @@ void LinkedList :: filter(){
     switch(choice){
         case 1:
         {
-            while(temp!=NULL){
-                if((temp->price>=500)&&(temp->price<=1000)){
-                    Filter->add(temp->ID,temp->name,temp->type,temp->brand,temp->price);
+           
                     
                 }
             }

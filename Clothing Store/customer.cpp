@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void LinkedList :: sort(int lower, int upper)
+void LinkedList :: sort1(int lower, int upper)
 {
     LinkedList *Filter = new LinkedList();//creates new object of linked list class for sorted list
 	Node *FilterH = NULL; //head to the new LL
@@ -69,11 +69,11 @@ void LinkedList :: filter(){
 
     switch(choice)
 	{
-        case 1:sort(500,1000);
+        case 1:sort1(500,1000);
 		break;
-		case 2:sort(1001,1500);
+		case 2:sort1(1001,1500);
 		break;
-		case 3:sort(1501,2000);
+		case 3:sort1(1501,2000);
 		break;
 		default: cout<<"Invalid entry"<<endl;
         

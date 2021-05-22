@@ -25,15 +25,15 @@ void CustLinkedList::addCust(int id, string Name, string Address,long Phoneno){
 }
 void CustLinkedList::display_profile(){
 	if (head == NULL) {
-        cout << "List is empty!" << endl;
+        cout << "\t \t \t \t \t List is empty! \n" << endl;
     }
     else {
         temp = head;
-		cout<<"-------------------------------------------------------------------------------------------------------------------"<<endl;
-		cout<<setw(10)<<"Customer Id"<< setw(25) <<"Name"<<setw(50)<<"Address" <<setw(15)<<"Phone no."<<endl;
-		cout<<"-------------------------------------------------------------------------------------------------------------------"<<endl;
+		cout<<"\t ----------------------------------------------------------------------------------------------------"<<endl;
+		cout<<"\t "<<setw(10)<<"Customer Id"<< setw(25) <<"Name"<<setw(50)<<"Address" <<setw(15)<<"Phone no."<<endl;
+		cout<<"\t ----------------------------------------------------------------------------------------------------"<<endl;
         while (temp != NULL) {
-            cout <<setw(10)<< temp->CustId <<setw(25)<< temp->CustName<<setw(50)<<temp->address<<setw(15)<<temp->phoneno<<endl;
+            cout <<"\t "<<setw(10)<< temp->CustId <<setw(25)<< temp->CustName<<setw(50)<<temp->address<<setw(15)<<temp->phoneno<<endl;
             temp = temp->link;
         }
         cout << endl;

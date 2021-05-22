@@ -63,10 +63,11 @@ void LinkedList :: sort1(int lower, int upper)
 void LinkedList :: filter(){
     
     int choice;
-    cout<<"Select a price ranges from the options given below"<<endl;
-    cout<<"1.Rs.500 to Rs.1000"<<endl<<"2.Rs.1000 to Rs.1500"<<endl<<"3.Rs.1500 to Rs.2000"<<endl;
-    cin>>choice;
-
+    cout<<"\t \t \t \t \t Select a price ranges from the options given below : "<<endl;
+    cout<<"\t \t \t \t \t 1.Rs.500 to Rs.1000"<<endl<<"\t \t \t \t \t 2.Rs.1000 to Rs.1500"<<endl<<"\t \t \t \t \t 3.Rs.1500 to Rs.2000"<<endl;
+    cout<<"\t \t \t \t \t ";
+	cin>>choice;
+	cout<<"\n";
     switch(choice)
 	{
         case 1:sort1(500,1000);
@@ -75,7 +76,7 @@ void LinkedList :: filter(){
 		break;
 		case 3:sort1(1501,2000);
 		break;
-		default: cout<<"Invalid entry"<<endl;
+		default: cout<<"\t \t \t \t \t Invalid entry! \n"<<endl;
         
       }
 
@@ -83,12 +84,14 @@ void LinkedList :: filter(){
 }
 void LinkedList :: search(){
   string Input, brand2, name2, type2;
-  cout<< "Search for something"<<endl;
+  cout<< "\t \t \t \t \t Search for something... \n"<<endl;
+  cout<<"\t \t \t \t \t ";
   cin>> Input;
+  cout<<"\n";
   transform(Input.begin(), Input.end(), Input.begin(), ::tolower );
   temp = head;
   if(head == NULL){
-      cout<< "List is empty"<<endl;
+      cout<< "\t \t \t \t \t List is empty! \n"<<endl;
   }
   else{
       int flag = 0;
@@ -103,19 +106,19 @@ void LinkedList :: search(){
 
           if(name2.find(Input) != string::npos || brand2.find(Input) != string::npos || type2.find(Input) != string::npos){
                if (counter==1){
-                cout<<"-------------------------------------------------------------------------------------------------"<<endl;
-	         cout<<setw(10)<<"Product Id"<< setw(35) <<"Name"<<setw(20)<<"Type" <<setw(20)<<"Brand"<<setw(10)<< "Price"<<endl;
-	         cout<<"-------------------------------------------------------------------------------------------------"<<endl;
+			 cout<<"\t -------------------------------------------------------------------------------------------------"<<endl;
+	         cout<<"\t "<<setw(10)<<"Product Id"<< setw(35) <<"Name"<<setw(20)<<"Type" <<setw(20)<<"Brand"<<setw(10)<< "Price"<<endl;
+			 cout<<"\t -------------------------------------------------------------------------------------------------"<<endl;
 	         counter++;
                }
-             cout <<setw(10)<< temp->ID <<setw(35)<< temp->name<<setw(20)<<temp->type<<setw(20)<<temp->brand<<setw(10)<<temp->price<<endl;
+             cout <<"\t "<<setw(10)<< temp->ID <<setw(35)<< temp->name<<setw(20)<<temp->type<<setw(20)<<temp->brand<<setw(10)<<temp->price<<endl;
              flag = 1;
 
           }
           temp = temp -> next;
      }
       if(flag == 0){
-          cout <<"Product not available"<<endl;
+          cout <<"\t \t \t \t \t Product not available! \n "<<endl;
       }
   }
 
@@ -123,11 +126,13 @@ void LinkedList :: search(){
 void LinkedList::buysearch(LinkedList* cart,int &total)
 {
 	  int pid;
-	  cout<<"Enter product Id of product to be added to cart."<<endl;
+	  cout<<"\t \t \t \t \t Enter product Id of product to be added to cart."<<endl;
+	  cout<<"\t \t \t \t \t ";
 	  cin>>pid;
+	  cout<<endl;
 	  temp = head;
 	  if(head == NULL){
-		  cout<< "List is empty"<<endl;
+		  cout<< "\t \t \t \t \t List is empty"<<endl;
 	  }
 	  else
 	  {
@@ -141,7 +146,7 @@ void LinkedList::buysearch(LinkedList* cart,int &total)
 				}
 			  temp = temp -> next;
 		  }
-		  cout <<"Product not available"<<endl;
+		  cout <<"\n \t \t \t \t \t Product not available\n"<<endl;
 	  }
 
 }

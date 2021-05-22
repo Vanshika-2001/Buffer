@@ -11,9 +11,11 @@ void addtocart()
 {
 	int opt;
 	char a;
-	cout<<"Do you want to add to cart?"<<endl;
-	cout<<"1.Yes\n2.No"<<endl;
+	cout<<"\n \t \t \t \t \t Do you want to add to cart?"<<endl;
+	cout<<"\t \t \t \t \t 1.Yes\n\t \t \t \t \t 2.No \n"<<endl;
+	cout<<"\t \t \t \t \t ";
 	cin>>opt;
+	cout<<endl;
 	do
 	{
 		
@@ -25,8 +27,10 @@ void addtocart()
 		{
 			break;
 		}
-		cout<<"Do you want to add more products to the cart?(y/n)"<<endl;
+		cout<<"\t \t \t \t \t Do you want to add more products to the cart?(y/n)"<<endl;
+		cout<<"\t \t \t \t \t ";
 		cin>>a;
+		cout<<endl;
 	}while(a=='y');
 }
 
@@ -49,12 +53,15 @@ int main(){
     char ch;   	//choice
 	int visit = 0;
     char ans;   //yes or no for continuing in the do while loop
-    cout<<"Welcome to Clothing Store"<<endl;
+    cout<<"\n \n \t \t \t \t \t Welcome to Clothing Store!\n "<<endl;
+	cout<<"\t ----------------------------------------------------------------------------------------------------\n"<<endl;
     do{
 		visit = 0;
-        cout<<"Are you a Customer or Seller"<<endl;
-        cout<<"1.Customer"<<endl<<"2.Seller"<<endl;
+        cout<<"\t \t \t \t \t Are you a Customer or Seller? \n"<<endl;
+        cout<<"\t \t \t \t \t 1.Customer"<<endl<<"\t \t \t \t \t 2.Seller \n"<<endl;
+		cout<<"\t \t \t \t \t ";
         cin>>ch;
+		cout<<"\n";
         switch (ch)
         {
             case '1':
@@ -63,10 +70,11 @@ int main(){
                 do
                 {
 					visit = 0;
-                    cout<<"What would you like to do today?"<<endl;
-                    cout<<"1.Display All Products"<<endl<<"2.Filter the Products by price"<<endl<<"3.Search for a product"<<endl<<"4.Buy Now"<<endl<<"5.Display Profile"<<endl;
-                    cin>>ch1;
-
+                    cout<<"\t \t \t \t \t What would you like to do today?\n"<<endl;
+                    cout<<"\t \t \t \t \t 1.Display All Products"<<endl<<"\t \t \t \t \t 2.Filter the Products by price"<<endl<<"\t \t \t \t \t 3.Search for a product"<<endl<<"\t \t \t \t \t 4.Buy Now"<<endl<<"\t \t \t \t \t 5.Display Profile \n"<<endl;
+                    cout<<"\t \t \t \t \t ";
+					cin>>ch1;
+					cout<<"\n";
                     switch (ch1)
                     {
                         case '1':
@@ -98,14 +106,19 @@ int main(){
                         //buy function call
 						{
 							char confirm;
-							cout<<"The following products have been added to your cart"<<endl;
+							cout<<"\t \t \t \t \t The following products have been added to your cart \n"<<endl;
 							cart->display();
-							cout<<"Total amount: "<<totalamount<<endl;
-							cout<<"Would you like to place your order?(y/n)"<<endl;
+							cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------"<<endl;
+							cout<<"\t \t \t \t \t \t \t \t\t		Total amount: Rs. "<<totalamount<<endl;
+							cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------\n"<<endl;
+							cout<<"\t \t \t \t \t Would you like to place your order?(y/n)"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>confirm;
+							cout<<"\n";
 							if(confirm=='y')
 							{
-								cout<<"Your order has been placed!\nYour order will be delivered to you between 5 to 10 business days."<<endl;
+								cout<<"\t \t \t \t \t Your order has been placed!\n\t \t \t \t \t Your order will be delivered to you between 5 to 10 business days."<<endl;
+								cout<<"\t \t \t \t \t Thanks for shopping with us! Enjoy your day :)"<<endl;
 								exit(0);
 							}
 						}
@@ -122,8 +135,10 @@ int main(){
 
                     if(visit == 0)
                     {
-                        cout<<"Go to Main Menu? (y/n)"<<endl;
+                        cout<<"\t \t \t \t \t Go to Main Menu? (y/n)"<<endl;
+						cout<<"\t \t \t \t \t ";
                         cin>>ans;
+						cout<<"\n";
                     }
 
                 } while((visit == 1) ||(ans=='y'));       // do while ends for customer menu
@@ -136,10 +151,11 @@ int main(){
                 do
                 {
 					visit = 0;
-                    cout<<"What would you like to do today?"<<endl;
-                    cout<<"1.Add a product"<<endl<<"2.Delete a Product"<<endl<<"3.Edit details of a product"<<endl<<"4.Display all the products"<<endl;
-                    cin>>ch2;
-
+                    cout<<"\t \t \t \t \t What would you like to do today?"<<endl;
+                    cout<<"\t \t \t \t \t 1.Add a product"<<endl<<"\t \t \t \t \t 2.Delete a Product"<<endl<<"\t \t \t \t \t 3.Edit details of a product"<<endl<<"\t \t \t \t \t 4.Display all the products"<<endl<<"\t \t \t \t \t 5.Exit \n"<<endl;
+                    cout<<"\t \t \t \t \t ";
+					cin>>ch2;
+					cout<<"\n";
                     switch (ch2)
                     {
                         case '1':
@@ -147,16 +163,26 @@ int main(){
 						{
 						    int ID,price;
 							string name,type,brand;
-							cout<<"Enter the product ID:"<<endl;
+							cout<<"\n \t \t \t \t \t Enter the product ID:"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>ID;
-							cout<<"Enter the product name:"<<endl;
+							cout<<"\n";
+							cout<<"\n \t \t \t \t \t Enter the product name:"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>name;
-							cout<<"Enter the product type:"<<endl;
+							cout<<"\n";
+							cout<<"\n \t \t \t \t \t Enter the product type:"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>type;
-							cout<<"Enter the product brand:"<<endl;
+							cout<<"\n";
+							cout<<"\n \t \t \t \t \t Enter the product brand:"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>brand;
-							cout<<"Enter the price of product:"<<endl;
+							cout<<"\n";
+							cout<<"\n \t \t \t \t \t Enter the price of product:"<<endl;
+							cout<<"\t \t \t \t \t ";
 							cin>>price;
+							cout<<"\n";
 							list->add(ID,name,type,brand,price,1);
 						}
 						break;
@@ -175,21 +201,26 @@ int main(){
 							//display function call
 							list->display();
 						break;
-
-                        default :	cout<<"Invalid Entry"<<endl<<"Enter number from the given menu"<<endl;
+						
+						case '5': exit(0);
+						break;
+						
+                        default :	cout<<"\t \t \t \t \t Invalid Entry! \n"<<endl<<"\t \t \t \t \t Enter number from the given menu"<<endl;
 										visit=1;
                     }   //switch ends
 
                     if(visit == 0)
                     {
-                        cout<<"Go to Main Menu ?(y/n)"<<endl;
+                        cout<<"\n \t \t \t \t \t Go to Main Menu ?(y/n)"<<endl;
+						cout<<"\t \t \t \t \t ";
                         cin>>ans;
+						cout<<"\n";
                     }
                 } while((visit == 1) || (ans=='y'));        //do while ends for ch2 seller
 
                 break;
 
-            default:    cout<<"Invalid Entry"<<endl<<"Enter number from given options"<<endl;
+            default:    cout<<"\t \t \t \t \t Invalid Entry! \n"<<endl<<"\t \t \t \t \t Enter number from given options"<<endl;
 							visit =1;
 
         }       //switch ends for the main menu where user choses between customer and seller

@@ -38,7 +38,10 @@ class  LinkedList{
 	 void sort(int,int);
 	 void filter(); 	//search the products by price range and display in sorted form
      void search();
-     void buy();
+	 void buysearch(LinkedList*,int &);
+     //void Buy();
+	
+
 };
 
 #endif

@@ -7,12 +7,12 @@
 using namespace std;
 class CustNode{
 	public:
-	 string address;
+	string address;
     string CustName;
     int CustId;
     long phoneno;
 
-	Node *link;
+	CustNode *link;
 };
 class  CustLinkedList{
 	private:
@@ -23,7 +23,7 @@ class  CustLinkedList{
 			head = NULL;
 			temp = head;
 		}
-		void addCust();//function to add details of predefined customers' profile
+		void addCust(int , string, string ,long );//function to add details of predefined customers' profile
 		void display_profile();
 };
 #endif

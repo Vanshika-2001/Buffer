@@ -1,14 +1,41 @@
 #include <iostream>
 #include <string>
+#include<stdlib.h>
 #include "Clothing.h"
-//#include "profile.h"
-//#include "seller.h"
+#include "profile.h"
 using namespace std;
+LinkedList* cart= new LinkedList();
+LinkedList* list = new LinkedList();
+int totalamount=0;
+void addtocart()
+{
+	int opt;
+	char a;
+	cout<<"Do you want to add to cart?"<<endl;
+	cout<<"1.Yes\n2.No"<<endl;
+	cin>>opt;
+	do
+	{
+		
+		if(opt==1)
+		{
+			list->buysearch(cart,totalamount);
+		}
+		else
+		{
+			break;
+		}
+		cout<<"Do you want to add more products to the cart?(y/n)"<<endl;
+		cin>>a;
+	}while(a=='y');
+}
+
 int main(){
-	LinkedList* list = new LinkedList();
-	/*CustLinkedList* profiles = new CustLinkedList();
+	
+	
+	CustLinkedList* profiles = new CustLinkedList();
 	profiles ->addCust(1,"Vanshika","Gaur City,Noida,Delhi 201390",802197474);
-	profiles ->addCust(2,"Vijitha","Gaur City,Pune 411080",802197494);
+	/*profiles ->addCust(2,"Vijitha","Gaur City,Pune 411080",802197494);
 	profiles ->addCust(3,"Shreya","Pink City,Pune 456178",802187474);
 	profiles ->addCust(4,"Fatma","Rock City,Pune 401390",803197474);*/
 
@@ -18,8 +45,8 @@ int main(){
 	list->add(4,"Captain America t-shirt","Kidswear","Pantaloons",700);
 	list->add(5,"Slimfit jeans","Menswear","H&M",1500);
 	list->add(6,"Boyfriend jeans","Womenswear","Pantaloons",1800);
-	
-    char ch;     //choice
+	//int opt;
+    char ch;   	//choice
 	int visit = 0;
     char ans;   //yes or no for continuing in the do while loop
     cout<<"Welcome to Clothing Store"<<endl;
@@ -37,32 +64,56 @@ int main(){
                 {
 					visit = 0;
                     cout<<"What would you like to do today?"<<endl;
-                    cout<<"1.Display All Products"<<endl<<"2.Filter the Products by price"<<endl<<"3.Search for a product"<<endl<<"4.Buy A Product"<<endl<<"5.Display Profile"<<endl;
+                    cout<<"1.Display All Products"<<endl<<"2.Filter the Products by price"<<endl<<"3.Search for a product"<<endl<<"4.Buy Now"<<endl<<"5.Display Profile"<<endl;
                     cin>>ch1;
 
                     switch (ch1)
                     {
                         case '1':
-                        //display function call
-                        list ->display();
+                        {   //display function call
+						    list ->display();
+							addtocart();
+						   
+						}
                         break;
 
                         case '2':
-                        //filter function call
-						list->filter();
+                         //filter function call
+						 {  
+						    list->filter();
+					        addtocart();
+						 }
                         break;
 
                         case '3':
                         //search function call
-                        list ->search();
+						{
+							list ->search();
+							addtocart();
+						}
+					   			   
                         break;
 
                         case '4':
                         //buy function call
+						{
+							char confirm;
+							cout<<"The following products have been added to your cart"<<endl;
+							cart->display();
+							cout<<"Total amount: "<<totalamount<<endl;
+							cout<<"Would you like to place your order?(y/n)"<<endl;
+							cin>>confirm;
+							if(confirm=='y')
+							{
+								cout<<"Your order has been placed!\nYour order will be delivered to you between 5 to 10 business days."<<endl;
+								exit(0);
+							}
+						}
                         break;
 
                         case '5':
                         //display profile function call
+						profiles->display_profile();
                         break;
 
                         default:cout<<"Invalid Entry"<<endl<<"Enter number from the given menu"<<endl;
@@ -71,7 +122,7 @@ int main(){
 
                     if(visit == 0)
                     {
-                        cout<<"Do you want to continue(y/n)"<<endl;
+                        cout<<"Go to Main Menu? (y/n)"<<endl;
                         cin>>ans;
                     }
 
@@ -131,7 +182,7 @@ int main(){
 
                     if(visit == 0)
                     {
-                        cout<<"Do you want to continue?(y/n)"<<endl;
+                        cout<<"Go to Main Menu ?(y/n)"<<endl;
                         cin>>ans;
                     }
                 } while((visit == 1) || (ans=='y'));        //do while ends for ch2 seller

@@ -119,5 +119,32 @@ void LinkedList :: search(){
       }
   }
 
+}
+void LinkedList::buysearch(LinkedList* cart,int &total)
+{
+	  int pid;
+	  cout<<"Enter product Id of product to be added to cart."<<endl;
+	  cin>>pid;
+	  temp = head;
+	  if(head == NULL){
+		  cout<< "List is empty"<<endl;
+	  }
+	  else
+	  {
+		  while(temp!= NULL)
+		  {
+			   if(pid==temp->ID)
+			   {
+					 cart->add(temp->ID,temp->name,temp->brand,temp->type,temp->price);
+					 total=total+temp->price;
+					 return;
+				}
+			  temp = temp -> next;
+		  }
+		  cout <<"Product not available"<<endl;
+	  }
 
 }
+
+
+

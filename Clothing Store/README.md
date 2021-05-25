@@ -30,11 +30,25 @@
  - Display products
  - Editing the existing products
  
-  ## References
- -https://www.geeksforgeeks.org/
- -
+  ## What did you learn while working on the project?
+ - Linked Lists Implementation using Classes and Objects
+ - Insertion Sort on Linked Lists
+ - Polymorphism using Function Overloading
+ - Creating Header Files
  
- ##
+  ## What's next for the Project?
+  - To store data in CSV files
+  - Login and Sign-Up
+  - Using Hashmaps
+  - Using Market Basket Analysis
+  - Creating a Web Interface 
+
+  
+  ## References
+ - [Link](https://www.geeksforgeeks.org/)
+ - [Link](https://gist.github.com/arunenigma/5183451#file-linked_list_using_classes-cpp-L4)
+ 
+
  
  
  

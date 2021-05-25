@@ -73,23 +73,23 @@ void LinkedList::edit(){
 				cout<<"\t \t \t \t \t ";
 				cin>>ch;
 				cout<<"\n";
-				
+				cin.ignore();
 					switch(ch){
 					case '1': cout<<"\n \t \t \t \t \t Enter new Product name"<<endl;
 								cout<<"\t \t \t \t \t ";
-								cin>>name2;
+								getline(cin, name2);
 								cout<<"\n";
 								temp->name = name2;
 								break;
 					case '2': cout<<"\n \t \t \t \t \t Enter new Product type"<<endl;
 								cout<<"\t \t \t \t \t ";
-								cin>>type2;
+								getline(cin, type2);
 								cout<<"\n";
 								temp->type = type2;
 								break;
 					case '3': cout<<"\n \t \t \t \t \t Enter new Brand name"<<endl;
 								cout<<"\t \t \t \t \t ";
-								cin>>brand2;
+								getline(cin, brand2);
 								cout<<"\n";
 								temp->brand = brand2;
 								break;

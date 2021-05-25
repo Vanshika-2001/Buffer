@@ -88,16 +88,18 @@ int main(){
                         case '2':
                          //filter function call
 						 {  
-						    list->filter();
-					        addtocart();
+						    int z=list->filter();
+					        if(z != 0)
+								addtocart();
 						 }
                         break;
 
                         case '3':
                         //search function call
 						{
-							list ->search();
-							addtocart();
+							int z = list ->search();
+							if(z != 0)
+								addtocart();
 						}
 					   			   
                         break;
@@ -129,7 +131,7 @@ int main(){
 						profiles->display_profile();
                         break;
 
-                        default:cout<<"Invalid Entry"<<endl<<"Enter number from the given menu"<<endl;
+                        default:cout<<"\t \t \t \t \t Invalid Entry"<<endl<<"\t \t \t \t \t Enter number from the given menu"<<endl;
 										visit =1;
                     }       //switch ends ch ,the customer choice
 

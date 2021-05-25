@@ -45,8 +45,8 @@
 
   
   ## References
- - [Link](https://www.geeksforgeeks.org/)
- - [Link](https://gist.github.com/arunenigma/5183451#file-linked_list_using_classes-cpp-L4)
+ - [https://www.geeksforgeeks.org/](https://www.geeksforgeeks.org/)
+ - [Linked Lists Using Classes in C++](https://gist.github.com/arunenigma/5183451#file-linked_list_using_classes-cpp-L4)
  
 
  

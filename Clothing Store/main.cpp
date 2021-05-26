@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+#include <set>
 #include<stdlib.h>
 #include "Clothing.h"
 #include "profile.h"
 using namespace std;
+set <int> visitedID{1,2,3,4,5,6};
 LinkedList* cart= new LinkedList();
 LinkedList* list = new LinkedList();
 int totalamount=0;
@@ -110,18 +112,23 @@ int main(){
 							char confirm;
 							cout<<"\t \t \t \t \t The following products have been added to your cart \n"<<endl;
 							cart->display();
-							cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------"<<endl;
-							cout<<"\t \t \t \t \t \t \t \t\t		Total amount: Rs. "<<totalamount<<endl;
-							cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------\n"<<endl;
-							cout<<"\t \t \t \t \t Would you like to place your order?(y/n)"<<endl;
-							cout<<"\t \t \t \t \t ";
-							cin>>confirm;
-							cout<<"\n";
-							if(confirm=='y')
-							{
-								cout<<"\t \t \t \t \t Your order has been placed!\n\t \t \t \t \t Your order will be delivered to you between 5 to 10 business days."<<endl;
-								cout<<"\t \t \t \t \t Thanks for shopping with us! Enjoy your day :)"<<endl;
-								exit(0);
+							if(totalamount==0){
+								cout<<"\n\t \t \t \t \t You have no items in your cart"<<endl<<endl;
+							}
+							else{
+								cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------"<<endl;
+								cout<<"\t \t \t \t \t \t \t \t\t		Total amount: Rs. "<<totalamount<<endl;
+								cout<<" \t \t \t \t \t \t \t \t \t\t\t----------------------\n"<<endl;
+								cout<<"\t \t \t \t \t Would you like to place your order?(y/n)"<<endl;
+								cout<<"\t \t \t \t \t ";
+								cin>>confirm;
+								cout<<"\n";
+								if(confirm=='y')
+								{
+									cout<<"\t \t \t \t \t Your order has been placed!\n\t \t \t \t \t Your order will be delivered to you between 5 to 10 business days."<<endl;
+									cout<<"\t \t \t \t \t Thanks for shopping with us! Enjoy your day :)"<<endl;
+									exit(0);
+								}
 							}
 						}
                         break;
@@ -165,9 +172,19 @@ int main(){
 						{
 						    int ID,price;
 							string name,type,brand;
+							while(1){
 							cout<<"\n \t \t \t \t \t Enter the product ID:"<<endl;
 							cout<<"\t \t \t \t \t ";
 							cin>>ID;
+							if(visitedID.count(ID)){
+								
+								cout<<"\n \t \t \t \t \t The Product ID already exists"<<endl;
+								cout<<endl;
+								continue;
+							}
+							visitedID.insert(ID);
+							break;
+							}
 							cin.ignore();
 							cout<<"\n";
 							cout<<"\n \t \t \t \t \t Enter the product name:"<<endl;

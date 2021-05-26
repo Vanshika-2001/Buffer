@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 #include <string>
 #include<iomanip>
 #include <algorithm>
@@ -86,6 +87,8 @@ int LinkedList :: filter(){
 }
 int LinkedList :: search(){
   string Input, brand2, name2, type2, tmp;
+  set <int> visited;
+
   int flag=0;
   cout<< "\t \t \t \t \t Search for something... \n"<<endl;
   cout<<"\t \t \t \t \t ";
@@ -116,7 +119,10 @@ int LinkedList :: search(){
 		  
 			for( int i=0; i<words.size(); ++i){   //iterating through each word in vector words
 				if(name2.find(words[i]) != string::npos || brand2.find(words[i]) != string::npos || type2.find(words[i]) != string::npos){ 
-				   if (counter==1){
+				  if(visited.count(temp->ID)){
+                      continue;
+                  }
+                   if (counter==1){
 					 cout<<"\t -------------------------------------------------------------------------------------------------"<<endl;
 					 cout<<"\t "<<setw(10)<<"Product Id"<< setw(35) <<"Name"<<setw(20)<<"Type" <<setw(20)<<"Brand"<<setw(10)<< "Price"<<endl;
 					 cout<<"\t -------------------------------------------------------------------------------------------------"<<endl;
@@ -124,6 +130,7 @@ int LinkedList :: search(){
 					   }
 					 cout <<"\t "<<setw(10)<< temp->ID <<setw(35)<< temp->name<<setw(20)<<temp->type<<setw(20)<<temp->brand<<setw(10)<<temp->price<<endl;
 					 flag = 1;
+                     visited.insert(temp->ID);
 				  }
 			}
 			 

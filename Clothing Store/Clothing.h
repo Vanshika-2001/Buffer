@@ -30,7 +30,7 @@ class  LinkedList{
 	void add(int ID, string name, string type, string brand, int price);
 	void add(int ID, string name, string type, string brand, int price,int mode);
 	void edit();
-	void del();
+	int del();
 
 	void display();
 

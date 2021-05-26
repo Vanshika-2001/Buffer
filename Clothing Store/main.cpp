@@ -208,8 +208,13 @@ int main(){
 						break;
 
                         case '2':
-							//delete function call
-						    list->del();
+						{ //delete function call
+							int z;
+							z=list->del();
+							if(z==0){
+								
+							}
+						}
                         break;
 
                         case '3':

@@ -119,7 +119,7 @@ void LinkedList::edit(){
 }
 
 
-void LinkedList:: del()
+int LinkedList:: del()
 {
 	int id;
 	cout<<"\t \t \t \t \t Enter the ID of the product you want to delete."<<endl;
@@ -138,6 +138,7 @@ void LinkedList:: del()
 	{
 		cout<<"\t \t \t \t \t Product "<<id<<" was not in the list."<<endl;
 		delete delptr;
+		return -1;
 	}
 	else if(curr==head)
 	{  
@@ -154,7 +155,7 @@ void LinkedList:: del()
 		delete delptr;
 		cout<<"\t \t \t \t \t Product "<<id<<" was deleted successfully."<<endl;
 	}
-	
+	return id;
 }
 
 

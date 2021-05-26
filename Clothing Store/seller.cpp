@@ -28,6 +28,7 @@ void LinkedList::add(int id, string Name, string Type, string Brand, int Price){
 
 // display version of add function (Polymorphism)
 void LinkedList::add(int id, string Name, string Type, string Brand, int Price,int mode){
+	temp=head;
 	Node *newNode =  new Node();
 	newNode->ID = id;
 	newNode->name = Name;
@@ -36,6 +37,10 @@ void LinkedList::add(int id, string Name, string Type, string Brand, int Price,i
 	newNode->price = Price;
 	
 	newNode->next = NULL;
+	while(temp->next!=NULL)
+		{
+			temp=temp->next;
+		}
 	if(head == NULL){
 		head = newNode;
 		temp = newNode;
@@ -49,6 +54,7 @@ void LinkedList::add(int id, string Name, string Type, string Brand, int Price,i
 	cout<<"\t "<<setw(10)<<"Product Id"<< setw(35) <<"Name"<<setw(20)<<"Type" <<setw(20)<<"Brand"<<setw(13)<< "Price (Rs)"<<endl;
 	cout<<"\t ----------------------------------------------------------------------------------------------------"<<endl;
 	cout<<"\t " <<setw(10)<< newNode->ID <<setw(35)<< newNode->name<<setw(20)<<newNode->type<<setw(20)<<newNode->brand<<setw(13)<<newNode->price<<endl;
+    //temp=head;
 }
 
 
@@ -74,28 +80,32 @@ void LinkedList::edit(){
 				cin>>ch;
 				cout<<"\n";
 				cin.ignore();
+				
 					switch(ch){
 					case '1': cout<<"\n \t \t \t \t \t Enter new Product name"<<endl;
 								cout<<"\t \t \t \t \t ";
-								getline(cin, name2);
+								getline(cin,name2);
 								cout<<"\n";
 								temp->name = name2;
 								break;
 					case '2': cout<<"\n \t \t \t \t \t Enter new Product type"<<endl;
 								cout<<"\t \t \t \t \t ";
-								getline(cin, type2);
+								getline(cin,type2);
+								
 								cout<<"\n";
 								temp->type = type2;
 								break;
 					case '3': cout<<"\n \t \t \t \t \t Enter new Brand name"<<endl;
 								cout<<"\t \t \t \t \t ";
-								getline(cin, brand2);
+								getline(cin,brand2);
+								
 								cout<<"\n";
 								temp->brand = brand2;
 								break;
 					case '4': cout<<"\n \t \t \t \t \t Enter new price of the product"<<endl;
 								cout<<"\t \t \t \t \t ";
 								cin>>price2;
+								
 								cout<<"\n";
 								temp->price = price2;
 								break;
@@ -119,7 +129,7 @@ void LinkedList::edit(){
 }
 
 
-int LinkedList:: del()
+void LinkedList:: del()
 {
 	int id;
 	cout<<"\t \t \t \t \t Enter the ID of the product you want to delete."<<endl;
@@ -138,7 +148,6 @@ int LinkedList:: del()
 	{
 		cout<<"\t \t \t \t \t Product "<<id<<" was not in the list."<<endl;
 		delete delptr;
-		return -1;
 	}
 	else if(curr==head)
 	{  
@@ -155,7 +164,7 @@ int LinkedList:: del()
 		delete delptr;
 		cout<<"\t \t \t \t \t Product "<<id<<" was deleted successfully."<<endl;
 	}
-	return id;
+	temp=head;
 }
 
 
@@ -174,4 +183,5 @@ void LinkedList::display(){
         }
         cout << endl;
     }
+	temp=head;
 }
